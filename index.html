@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hiep nguyen</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    body {
+      cursor: url("images/cursor.png") 16 16, pointer;
+    }
+
+    .blue-light {
+        position: absolute;
+        width: 10px; 
+        height: 32px; 
+        background: rgba(0, 128, 255, 0.4);
+        border-radius: 0; 
+        pointer-events: none;
+        filter: blur(15px);
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        }
+    .crt {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.8) 2px, 
+        rgba(255, 255, 255, 0) 3px 
+      );
+      mix-blend-mode: overlay;
+    }
+
+    @keyframes crt-flicker {
+      0%, 100% {
+        opacity: 0.9; 
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .crt {
+      animation: crt-flicker 0.1s infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 custom-cursor">
+    <div id="blue-light" class="blue-light"></div>
+
+
+    <div class="crt"></div>
+
+  <div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="flex justify-center">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6 w-full max-w-screen-xl p-4">
+
+        <a href="https://www.google.com" target="_blank" class="relative w-64 h-32 rounded-3xl bg-[#1E1E22] shadow-md hover:shadow-lg transition overflow-hidden group block">
+          <img src="images/github.png" class="absolute bottom-[-1] right-0 w-40 h-40 object-cover opacity-10">
+          <p class="absolute bottom-6 left-4 text-lg font-bold text-gray-100 group-hover:bottom-12 transition-all duration-300"> github</p>
+          <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-50"> full of half baked projects. </p>
+        </a>
+
+        <a href="https://www.linkedin.com/in/hiepnguyen04/" target="_blank" class="relative w-64 h-32 rounded-3xl bg-[#fffff] shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <img src="images/github.png" class="absolute bottom-0 right-0 w-24 h-24 object-cover opacity-60">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-gray-100 group-hover:bottom-12 transition-all duration-30"> linkedin</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-50"> connect with me! </p>
+        </a>
+
+        <a href="https://www.last.fm/user/HeepAIO" target="_blank" class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <div class="absolute inset-0 bg-black opacity-30 z-10 pointer-events-none"></div>
+            <img id="album-cover" src="images/github.png" class="w-100 h-100 object-cover opacity-60 z-0">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-gray-100 group-hover:bottom-12 transition-all duration-300 z-20">listening to</p>
+            <p id="now-playing-text" class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-50 z-20"></p>
+        </a>
+          
+        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
+        </div>
+
+        <a href="https://www.prismdashboards.com" target="_blank" class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <img src="images/github.png" class="absolute bottom-0 right-1 w-16 h-16 object-cover opacity-60">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> prism dashboards</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> founder. </p>
+        </a>
+
+        <a href="https://x.com/storestalkamz" target="_blank" class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <img src="images/github.png" class="absolute bottom-0 right-1 w-16 h-16 object-cover opacity-60">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> store stalk</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> currently building. </p>
+        </a>
+
+        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
+        </div>
+
+        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
+        </div>
+
+        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
+        </div>
+
+        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
+        </div>
+
+        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
+        </div>
+
+        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
+            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
+            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+        <svg class="absolute bottom-0 right-0" width="600" height="130" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="130" fill="#dbdcdd" />
+          </svg>
+          <img 
+            src="images/luke-curve.png" 
+            alt="Bottom Curve" 
+            class="absolute bottom-0 w-1/2" 
+            style="width: 200px; height: auto; left: 1150px; top: 813px; transform: scale(0.75);">
+        
+          <svg class="absolute bottom-0 left-0 transform scale-x-[-1]" width="600" height="130" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="130" fill="#dbdcdd" />
+          </svg>
+          <svg class="absolute bottom-0 left-0 transform scale-x-[-1]" width="1500" height="80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="1500" height="80" fill="#dbdcdd" />
+            </svg>
+          <img 
+            src="images/luke-curve.png" 
+            alt="Bottom Curve" 
+            class="absolute bottom-0 w-1/2" 
+            style="width: 200px; height: auto; right: 1150px; top: 813px; transform: scale(-0.75, 0.75);"> 
+    </div>
+  
+      <script>
+        const apiKey = "40224015974d85a4dbd7e7a3afa6af24";
+        const user = "HeepAIO";
+        const url = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${user}&api_key=${apiKey}&format=json`;
+    
+        async function fetchNowPlaying() {
+          try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            const currentTrack = data.recenttracks.track[0];
+            const isNowPlaying = currentTrack['@attr']?.nowplaying;
+
+            const nowPlayingText = document.getElementById("now-playing-text");
+            const albumCover = document.getElementById("album-cover");
+    
+            if (isNowPlaying) {
+              const trackName = currentTrack.name.toLowerCase();
+              const artistName = currentTrack.artist['#text'].toLowerCase();
+              const albumImage = currentTrack.image?.[3]?.['#text'] || currentTrack.image?.[2]?.['#text']; 
+                
+              if(trackName.length + artistName.length >= 39){
+                nowPlayingText.textContent = `${(trackName + " by " + artistName).substring(0, 36)}...`;
+            }
+              else{
+                nowPlayingText.textContent = `${trackName} by ${artistName}`;
+              }
+              if (albumImage) {
+                albumCover.src = albumImage;
+              }
+            } else {
+              nowPlayingText.textContent = "not listening to anything :(";
+              albumCover.src = "images/github.png"; 
+            }
+          } catch (error) {
+            console.error("Error fetching data from Last.fm API:", error);
+            const nowPlayingText = document.getElementById("now-playing-text");
+            nowPlayingText.textContent = "Failed to fetch current song.";
+          }
+        }
+    
+        fetchNowPlaying();
+        setInterval(fetchNowPlaying, 1000);
+      </script>
+
+    <script>
+        const blueLight = document.getElementById("blue-light");
+
+        let prevX = 0; 
+        let prevY = 0; 
+
+        document.addEventListener("mousemove", (e) => {
+        const currentX = e.pageX; 
+        const currentY = e.pageY; 
+
+        const deltaX = currentX - prevX;
+        const deltaY = currentY - prevY;
+
+        blueLight.style.left = `${currentX - deltaX * 2}px`;
+        blueLight.style.top = `${currentY - deltaY * 2}px`;
+
+        prevX = currentX;
+        prevY = currentY;
+        });
+  </script>
+
+</body>
+</html>
