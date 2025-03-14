@@ -1,220 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hiep nguyen</title>
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <style>
-    body {
-      cursor: url("images/cursor.png") 16 16, pointer;
-    }
-
-    .blue-light {
-        position: absolute;
-        width: 10px; 
-        height: 32px; 
-        background: rgba(0, 128, 255, 0.4);
-        border-radius: 0; 
-        pointer-events: none;
-        filter: blur(15px);
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        }
-    .crt {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9999;
-      background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.8), 
-        rgba(0, 0, 0, 0.8) 2px, 
-        rgba(255, 255, 255, 0) 3px 
-      );
-      mix-blend-mode: overlay;
-    }
-
-    @keyframes crt-flicker {
-      0%, 100% {
-        opacity: 0.9; 
-      }
-      50% {
-        opacity: 1;
-      }
-    }
-
-    .crt {
-      animation: crt-flicker 0.1s infinite;
-    }
-  </style>
-</head>
-<body class="bg-gray-100 custom-cursor">
-    <div id="blue-light" class="blue-light"></div>
-
-
-    <div class="crt"></div>
-
-  <div class="min-h-screen flex items-center justify-center bg-gray-100">
-    <div class="flex justify-center">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6 w-full max-w-screen-xl p-4">
-
-        <a href="https://www.google.com" target="_blank" class="relative w-64 h-32 rounded-3xl bg-[#1E1E22] shadow-md hover:shadow-lg transition overflow-hidden group block">
-          <img src="images/github.png" class="absolute bottom-[-1] right-0 w-40 h-40 object-cover opacity-10">
-          <p class="absolute bottom-6 left-4 text-lg font-bold text-gray-100 group-hover:bottom-12 transition-all duration-300"> github</p>
-          <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-50"> full of half baked projects. </p>
-        </a>
-
-        <a href="https://www.linkedin.com/in/hiepnguyen04/" target="_blank" class="relative w-64 h-32 rounded-3xl bg-[#fffff] shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <img src="images/github.png" class="absolute bottom-0 right-0 w-24 h-24 object-cover opacity-60">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-gray-100 group-hover:bottom-12 transition-all duration-30"> linkedin</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-50"> connect with me! </p>
-        </a>
-
-        <a href="https://www.last.fm/user/HeepAIO" target="_blank" class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <div class="absolute inset-0 bg-black opacity-30 z-10 pointer-events-none"></div>
-            <img id="album-cover" src="images/github.png" class="w-100 h-100 object-cover opacity-60 z-0">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-gray-100 group-hover:bottom-12 transition-all duration-300 z-20">listening to</p>
-            <p id="now-playing-text" class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-50 z-20"></p>
-        </a>
-          
-        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
-        </div>
-
-        <a href="https://www.prismdashboards.com" target="_blank" class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <img src="images/github.png" class="absolute bottom-0 right-1 w-16 h-16 object-cover opacity-60">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> prism dashboards</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> founder. </p>
-        </a>
-
-        <a href="https://x.com/storestalkamz" target="_blank" class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <img src="images/github.png" class="absolute bottom-0 right-1 w-16 h-16 object-cover opacity-60">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> store stalk</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> currently building. </p>
-        </a>
-
-        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
-        </div>
-
-        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
-        </div>
-
-        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
-        </div>
-
-        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
-        </div>
-
-        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
-        </div>
-
-        <div class="relative w-64 h-32 rounded-3xl bg-white shadow-md hover:shadow-lg transition overflow-hidden group block">
-            <p class="absolute bottom-6 left-4 text-lg font-bold text-[#010313]/50 group-hover:bottom-12 transition-all duration-300"> hiep.boo</p>
-            <p class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 group-hover:bottom-6 transition-all duration-300 text-sm text-gray-600"> hello there! </p>
-        </div>
-      </div>
-    </div>
-
-    <div>
-        <svg class="absolute bottom-0 right-0" width="600" height="130" xmlns="http://www.w3.org/2000/svg">
-            <rect width="600" height="130" fill="#dbdcdd" />
-          </svg>
-          <img 
-            src="images/luke-curve.png" 
-            alt="Bottom Curve" 
-            class="absolute bottom-0 w-1/2" 
-            style="width: 200px; height: auto; left: 1150px; top: 813px; transform: scale(0.75);">
-        
-          <svg class="absolute bottom-0 left-0 transform scale-x-[-1]" width="600" height="130" xmlns="http://www.w3.org/2000/svg">
-            <rect width="600" height="130" fill="#dbdcdd" />
-          </svg>
-          <svg class="absolute bottom-0 left-0 transform scale-x-[-1]" width="1500" height="80" xmlns="http://www.w3.org/2000/svg">
-              <rect width="1500" height="80" fill="#dbdcdd" />
-            </svg>
-          <img 
-            src="images/luke-curve.png" 
-            alt="Bottom Curve" 
-            class="absolute bottom-0 w-1/2" 
-            style="width: 200px; height: auto; right: 1150px; top: 813px; transform: scale(-0.75, 0.75);"> 
-    </div>
-  
-      <script>
-        const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=HeepAIO&api_key=40224015974d85a4dbd7e7a3afa6af24&format=json`;
-    
-        async function fetchNowPlaying() {
-          try {
-            const response = await fetch(url);
-            const data = await response.json();
-
-            const currentTrack = data.recenttracks.track[0];
-            const isNowPlaying = currentTrack['@attr']?.nowplaying;
-
-            const nowPlayingText = document.getElementById("now-playing-text");
-            const albumCover = document.getElementById("album-cover");
-    
-            if (isNowPlaying) {
-              const trackName = currentTrack.name.toLowerCase();
-              const artistName = currentTrack.artist['#text'].toLowerCase();
-              const albumImage = currentTrack.image?.[3]?.['#text'] || currentTrack.image?.[2]?.['#text']; 
-                
-              if(trackName.length + artistName.length >= 39){
-                nowPlayingText.textContent = `${(trackName + " by " + artistName).substring(0, 36)}...`;
-            }
-              else{
-                nowPlayingText.textContent = `${trackName} by ${artistName}`;
-              }
-              if (albumImage) {
-                albumCover.src = albumImage;
-              }
-            } else {
-              nowPlayingText.textContent = "not listening to anything :(";
-              albumCover.src = "images/github.png"; 
-            }
-          } catch (error) {
-            console.error("Error fetching data from Last.fm API:", error);
-            const nowPlayingText = document.getElementById("now-playing-text");
-            nowPlayingText.textContent = "Failed to fetch current song.";
-          }
-        }
-    
-        fetchNowPlaying();
-        setInterval(fetchNowPlaying, 1000);
-      </script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hiep nguyen</title>
+    <meta name="description" content="fullstack designer">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Space Grotesk Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
-        const blueLight = document.getElementById("blue-light");
-
-        let prevX = 0; 
-        let prevY = 0; 
-
-        document.addEventListener("mousemove", (e) => {
-        const currentX = e.pageX; 
-        const currentY = e.pageY; 
-
-        const deltaX = currentX - prevX;
-        const deltaY = currentY - prevY;
-
-        blueLight.style.left = `${currentX - deltaX * 2}px`;
-        blueLight.style.top = `${currentY - deltaY * 2}px`;
-
-        prevX = currentX;
-        prevY = currentY;
-        });
-  </script>
-
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#EEEEEE] font-space overflow-hidden">
+    <div class="crt">
+        <main class="h-screen fixed w-screen overflow-hidden flex flex-col">
+            <div class="flex flex-col justify-start items-start m-auto max-w-7xl relative w-full">
+                <!-- Gradient overlays for scroll edges -->
+                <div class="hidden md:block absolute top-0 bottom-0 right-0 w-14 bg-gradient-to-r from-transparent to-[#EEEEEE] z-10"></div>
+                <div class="hidden md:block absolute top-0 bottom-0 left-0 w-14 bg-gradient-to-l from-transparent to-[#EEEEEE] z-10"></div>
+                
+                <!-- Scrollable card grid -->
+                <div class="fade-in-right grid grid-rows-3 grid-flow-col gap-4 p-2 px-4 md:p-8 md:px-14 w-full max-w-7xl mx-auto horizontal-scroll">
+                    
+                     <!-- Card 7: Filter.im -->
+                     <a target="_blank" href="https://filter.im/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#010313] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <div class="px-[22px] py-4 flex flex-col justify-end items-start text-white h-full">
+                                <img class="translate-y-6 group-hover:translate-y-0 transition-transform" src="https://web-assets.same.dev/3749330314/3802094614.svg+xml" alt="">
+                                <span class="translate-y-6 group-hover:translate-y-0 transition-transform text-xl mt-1 font-semibold">github</span>
+                                <p class="font-medium translate-y-6 group-hover:translate-y-0 z-10 text-white/80 opacity-0 group-hover:opacity-100 transition">full of half baked projects</p>
+                                <img class="absolute -top-2 -right-20 w-[232px] h-[196px] group-hover:-translate-y-2 transition-transform opacity-60" src="https://web-assets.same.dev/1893488449/99844476.png" alt="">
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Card 2: Vanish.so -->
+                    <a target="_blank" href="https://vanish.so" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#010313] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <div class="px-[22px] py-4 flex flex-col justify-end items-start text-white h-full">
+                                <span class="z-10 translate-y-6 group-hover:translate-y-0 transition-transform text-xl mt-1 font-semibold">prism dashboards</span>
+                                <p class="font-medium translate-y-6 group-hover:translate-y-0 z-10 text-white/80 opacity-0 group-hover:opacity-100 transition">founder</p>
+                                <div class="absolute mx-auto bg-[#3B974E] w-48 rounded-[50%] h-12 blur-[30px] -top-8 group-hover:translate-y-4 group-hover:scale-110 transition-transform"></div>
+                                <div class="absolute mx-auto bg-[#73F190] w-48 rounded-[50%] h-12 blur-[30px] -bottom-8"></div>
+                                <div class="absolute mx-auto bg-[#3B974E] w-48 rounded-[50%] h-10 blur-[30px] -bottom-8"></div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Card 3: Placeholder -->
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                    
+                    <!-- Card 4: LINKEDIN (WOP) -->
+                    <a target="_blank" href="" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-gradient-to-b from-[#D8DAE0] to-[#C0C3CE] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <div class="px-[22px] py-4 flex flex-col justify-end items-start text-white h-full">
+                                <span class="translate-y-6 group-hover:translate-y-0 transition-transform text-xl mt-1 font-semibold text-gray-800">linkedin</span>
+                                <p class="font-medium translate-y-6 group-hover:translate-y-0 z-10 text-gray-800/80 opacity-0 group-hover:opacity-100 transition">let's connect!</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Card 5: STORESTALK (WOP) -->
+                    <a target="_blank" href="https://gomoku.gg/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#C2C2C2] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <div class="px-[22px] py-4 flex flex-col justify-end items-start text-white h-full">
+                                <img class="translate-y-6 group-hover:translate-y-0 transition-transform" src="https://web-assets.same.dev/3997980142/1062803902.svg+xml" alt="">
+                                <span class="translate-y-6 group-hover:translate-y-0 transition-transform text-xl mt-1 font-semibold text-gray-800">storestalk</span>
+                                <p class="font-medium translate-y-6 group-hover:translate-y-0 z-10 text-gray-800/80 opacity-0 group-hover:opacity-100 transition">working on</p>
+                                <img class="absolute top-5 -right-16 w-40 h-40 group-hover:-translate-y-2 transition-transform" src="https://web-assets.same.dev/2626874554/1616369248.png" alt="">
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Card 6: placeholder -->
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                    
+                    <!-- Card 7: More Soon -->
+                    <a target="_blank" href="https://www.last.fm/user/HeepAIO" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-gradient-to-b from-[#D8DAE0] to-[#C0C3CE] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <img class="w-28 h-28 m-auto group-hover:rotate-90 duration-300" src="https://web-assets.same.dev/3332724927/674719619.png" alt="Disc">
+                            
+                            <div class="absolute bottom-0 left-0 right-0 px-[22px] py-4 flex flex-col justify-end items-start">
+                                <span id="listening-status" class="translate-y-6 group-hover:translate-y-0 transition-transform text-xl mt-1 font-semibold text-gray-800">loading...</span>
+                                <p id="now-playing-text" class="font-medium translate-y-6 group-hover:translate-y-0 z-10 text-gray-800/80 opacity-0 group-hover:opacity-100 transition">loading...</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Card 8: placeholder -->
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                    
+                    <!-- Empty placeholder cards -->
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                    
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                    
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                    
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7] channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                    
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7]/50 soft-channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                    
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7]/50 soft-channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                    
+                    <a target="_blank" href="/" class="rounded-3xl flex relative w-64 h-36 group hover:scale-[1.01] transition-transform hover:scale-100 bg-[#F7F7F7]/50 soft-channel-shadow">
+                        <div class="overflow-hidden flex relative w-full rounded-3xl">
+                            <p class="m-auto text-xl font-bold text-[#CFD0D8] animate-pulse">hiep.studio</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Footer section with social links -->
+            <div class="w-full flex flex-col sm:mb-0 relative fade-in-bottom">
+                <!-- Twitter link -->
+                <a href="https://twitter.com/bvvst" class="z-10 absolute transition-all shadow-md hover:shadow-lg rounded-full flex ring-1 hover:ring-4 ring-[#C5C7CA] hover:ring-blue-400 bg-[#EEEEEE] w-10 h-10 sm:h-20 sm:w-20 top-2.5 left-2.5 sm:top-6 sm:left-6">
+                    <img class="m-auto" src="https://web-assets.same.dev/1174352133/2781685102.svg+xml" alt="">
+                </a>
+                
+                <!-- Email link -->
+                <a href="mailto:hi@hiep.studio" class="z-10 absolute transition-all shadow-md hover:shadow-lg rounded-full flex ring-1 hover:ring-4 ring-[#C5C7CA] hover:ring-blue-400 bg-[#EEEEEE] w-10 h-10 sm:h-20 sm:w-20 top-2.5 right-2.5 sm:top-6 sm:right-6">
+                    <img class="m-auto" src="https://web-assets.same.dev/1305422618/948394822.svg+xml" alt="">
+                </a>
+                
+                <!-- Disclaimer -->
+                <p class="absolute left-0 right-0 bottom-2 sm:bottom-6 text-sm font-medium text-center whitespace-nowrap text-[#010313]/30">hello :D</p>
+                
+                <!-- Footer bar -->
+                <div class="flex">
+                    <div class="w-full overflow-hidden bg-[#DBDCDD] h-[50px] sm:h-[70px]"></div>
+                    <img class="w-[122px] h-[50px] sm:w-[170px] sm:h-[70px] -scale-x-100" src="https://web-assets.same.dev/2608714831/2813742954.svg+xml" alt="">
+                    <div class="sm:w-[100rem]">
+                        <p class="text-xl sm:text-2xl font-medium text-center whitespace-nowrap text-[#010313]/50 translate-y-3 w-full">hiep.studio</p>
+                    </div>
+                    <img class="w-[122px] h-[50px] sm:h-[70px] sm:w-[170px]" src="https://web-assets.same.dev/2608714831/2813742954.svg+xml" alt="">
+                    <div class="w-full bg-[#DBDCDD] h-[50px] sm:h-[70px]"></div>
+                </div>
+                
+                <div class="w-full bg-[#DBDCDD] h-[40px] sm:min-h-[70px]"></div>
+            </div>
+            
+            <!-- Mobile footer spacer -->
+            <div class="block sm:hidden w-full h-28 bg-[#DBDCDD]"></div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
